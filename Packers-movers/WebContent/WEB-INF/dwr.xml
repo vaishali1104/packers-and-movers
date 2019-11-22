@@ -1,0 +1,24 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+    "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+  <allow>
+    <!-- 
+      Create a new Java script Class(.js) from defined class.
+     -->
+    <create creator="new" javascript="AjaxDataDao">
+      <param name="class" value="com.KS.dao.AjaxDataDao" />
+      
+       <include method="getAllType"/>
+      
+    </create>
+    
+    <!-- 
+      Following line will convert Java Beans and POJOs to and from JavaScript objects.
+      These converters are not enabled by default because DWR makes 
+      sure that is has permission before it exposes any of your classes.
+     -->
+    <convert converter="bean" match="com.KS.bean.VehicleBean" />
+  </allow>
+</dwr>
